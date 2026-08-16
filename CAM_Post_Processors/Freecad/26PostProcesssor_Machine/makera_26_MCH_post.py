@@ -220,6 +220,11 @@ class Makera_26_Mch(PostProcessor):
         # cutting move (see _inject_spindle_speed()).
         self._last_spindle_speed: Optional[float] = None
 
+        # Tracks the last custom-gcode operation posted, so repeated calls
+        # for the same operation (see convert_command_to_gcode()) are
+        # deduplicated instead of re-emitting the block every time.
+        self.lastop = None
+
     # ------------------------------------------------------------------
     # Tool table dump
     # ------------------------------------------------------------------
