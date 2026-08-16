@@ -225,6 +225,11 @@ class Makera_26_Mch(PostProcessor):
         # deduplicated instead of re-emitting the block every time.
         self.lastop = None
 
+        # Tool table entries for the header (see _build_header() /
+        # _expand_prefix()). Defaults to empty so _expand_prefix() has
+        # something to iterate even when the header/tool-list is disabled.
+        self.tool_controllers = []
+
     # ------------------------------------------------------------------
     # Tool table dump
     # ------------------------------------------------------------------
