@@ -232,7 +232,6 @@ class Makera_26_Mch(PostProcessor):
     
     def _build_header(self, postables):
         gcodeheader = super()._build_header(postables)
-        gcodeheader.Path.Commands.append('test')
 
         if self.values["OUTPUT_HEADER"] and self.values.get("LIST_TOOLS_IN_HEADER", True):
             self.tool_controllers = self._collect_tool_controllers(postables)
